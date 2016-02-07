@@ -17,16 +17,9 @@ def searchfolder(folder,filemask):
 
 def Countlines(filename):
     #counts the lines in filename.
-    countit = open(filename)
-    runner=0
-    for line in countit:
-        runner=runner+1
-        
-    return runner
+    linecount = sum(1 for line in open(filename))
+    return linecount
     
-    
-
-
 searchfor = sys.argv[1]
 searchin = sys.argv[2]
 print("examining files matching " + searchfor + " in directory " + searchin)
